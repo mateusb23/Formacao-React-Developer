@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "styled-components": "^6.3.8",
+    "yarn": "^1.22.22"
+  }
+}
