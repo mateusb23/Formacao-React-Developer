@@ -12,4 +12,12 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000000;
+
+  /* Efeito de hover para quando passar o mouse por cima do botão. 
+  Cursor :pointer muda o cursor do mouse também*/
+  &: hover {
+    background-color: #FAFAFA40;
+    cursor: pointer;
+  }
 `;
