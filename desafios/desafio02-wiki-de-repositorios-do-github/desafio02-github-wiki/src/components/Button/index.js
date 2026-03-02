@@ -1,10 +1,11 @@
 import React from 'react'
 import { ButtonContainer } from './styles'
 
-function Button({onClick}) {
+// Adicionamos a prop 'title' (ou 'label')
+function Button({onClick, title}) {
   return (
     <ButtonContainer onClick={onClick}>
-       Buscar
+       {title}
     </ButtonContainer>
   )
 }

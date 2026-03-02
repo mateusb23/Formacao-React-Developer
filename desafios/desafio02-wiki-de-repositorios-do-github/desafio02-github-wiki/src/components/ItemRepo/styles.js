@@ -14,7 +14,9 @@ export const ItemContainer = styled.div`
         margin-bottom: 20px;
     }
 
-    a.remover{
+    button.remover {
+        background: none;
+        border: none;
         color: #FF0000;
         cursor: pointer;
         margin-top: 20px;

@@ -14,7 +14,7 @@ function App() {
   const handleSearchRepo = async () => {
 
     const { data } = await api.get(`repos/${currentRepo}`);
-    
+
     if(data.id) {
       const isExist = repos.find(repo => repo.id === data.id);
       if(!isExist) {
@@ -26,12 +26,18 @@ function App() {
     alert('Repositório não encontrado');
   }
 
+  // NOVA FUNÇÃO: Remove o repositório da lista de estados
+  const handleRemoveRepo = (id) => {
+    const remainingRepos = repos.filter(repo => repo.id !== id);
+    setRepos(remainingRepos);
+  }
+
   return (
     <Container>
-      <img src={gitLogo} width={72} height={72} />
+      <img src={gitLogo} width={72} height={72} alt="Logo do GitHub" />
       <Input value={currentRepo} onChange={(e) => setCurrentRepo(e.target.value)} />
-      <Button onClick={handleSearchRepo}/>
-      {repos.map(repo => <ItemRepo repo={repo}/>)}
+      <Button title="Buscar" onClick={handleSearchRepo}/>
+      {repos.map(repo => <ItemRepo key={repo.id} repo={repo} onRemove={handleRemoveRepo}/>)}
     </Container>
   );
 }
