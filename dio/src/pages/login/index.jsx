@@ -1,25 +1,38 @@
+import { MdEmail, MdLock } from "react-icons/md"
+
 import { Button } from "../../components/Button"
 import { Header } from "../../components/Header"
 import { Input } from "../../components/Input"
 
-import { Container, Title } from './styles';
+import { Column, Row, Container, CriarText, EsqueciText, Title, TitleLogin, SubtitleLogin, Wrapper } from './styles';
 
 const Login = () => {
   return (<>
     <Header />
     <Container>
-      <div>
+      <Column>
         <Title> 
-          
-          O seu futuro global agora!
+          A plataforma para você aprender com experts, dominar as principais tecnologias 
+          e entrar mais rápido nas empresas mais desejadas.
         </Title>
-        <Button title="Começar agora" variant="secondary" onClick={() => null}/>
-      </div>
-      <div>
-        <Input placeholder="E-mail" />
-      </div>
+      </Column>
+      <Column>
+        <Wrapper>
+          <TitleLogin>Faça seu cadastro</TitleLogin>
+          <SubtitleLogin>Faça seu login e make the change._</SubtitleLogin>
+          <form>
+            <Input placeholder="E-mail" leftIcon={<MdEmail/>}/>
+            <Input placeholder="Senha" type="password" leftIcon={<MdLock/>} />
+            <Button title="Entrar" variant="secondary" />
+          </form>
+          <Row>
+            <EsqueciText>Esqueci minha senha</EsqueciText>
+            <CriarText>Criar conta</CriarText>
+          </Row>
+        </Wrapper>
+      </Column>
     </Container>
   </>)
 }
 
-export { Login } 
+export { Login }
